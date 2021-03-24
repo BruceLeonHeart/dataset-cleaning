@@ -14,9 +14,9 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--img_dir',type=str)
-    parser.add_argument('--xml_dir',type=str)
-    parser.add_argument('--dest_dir',type=str)
+    parser.add_argument('--img_dir',type=str,default='/dataset/quexian/蒙东/mengdong_day4/jpgs')
+    parser.add_argument('--xml_dir',type=str,default='/dataset/quexian/蒙东/mengdong_day4/xmls')
+    parser.add_argument('--dest_dir',type=str,default='/dataset/quexian/蒙东/mengdong_day4/merge')
     opt = parser.parse_args()
     #三个参数均不可以为空
     if None == (opt.img_dir or opt.xml_dir or opt.dest_dir):

@@ -22,7 +22,7 @@ from tqdm import tqdm
 #本批数据集起始编号
 N = 1
 company_name = "SJZD"
-pro_num = "01"
+pro_num = "02"
 
 
 if __name__ == '__main__':
@@ -57,7 +57,7 @@ if __name__ == '__main__':
         start_num =  str(N).zfill(6)       
         file_name = i.split('.')[0]#不带拓展名文件
         img_end_name = i.split('.')[1]#图片拓展名
-        xml_end_name = 'xml'#标注拓展名
+        xml_end_name = 'json'#标注拓展名
         new_file_name = company_name + "_" + pro_num + "_" + start_num
         N +=1
         img_src = os.path.join(opt.img_dir,i)
