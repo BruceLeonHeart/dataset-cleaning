@@ -162,13 +162,13 @@ def main( args ):
     kp_names = ["nose","left_eye","right_eye","left_ear","right_ear","left_shoulder","right_shoulder","left_elbow","right_elbow","left_wrist","right_wrist","left_hip","right_hip","left_knee","right_knee","left_ankle","right_ankle"]
     skeleton_list = [[16,14],[14,12],[17,15],[15,13],[12,13],[6,12],[7,13],[6,7],[6,8],[7,9],[8,10],[9,11],[2,3],[1,2],[1,3],[2,4],[3,5],[4,6],[5,7]]
 
-    if '' is not args.kp_names_file:
+    if '' != args.kp_names_file:
         kp_names = load_label_names(args.kp_names_file)
 
-    if '' is not  args.names_file:
+    if '' !=  args.names_file:
         classify_names = load_label_names(args.names_file)
 
-    if '' is not  args.skeleton:
+    if '' !=  args.skeleton:
         skeleton_list = load_skeleton(args.skeleton)
 
     json_suf = '*.json'
@@ -299,19 +299,19 @@ def main( args ):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--load_json_path', type=str, default='/home/fisun/dataset/public/coco_ds/single_kp_ds_all_sample/train2017/json',
+    parser.add_argument('--load_json_path', type=str, default='/home/al/dataset/double-light-fuse/mask-kp/20210512trainset/annos',
                         help='load json file path')
 
-    parser.add_argument('--save_path', type=str,      default='/home/fisun/dataset/public/coco_ds/single_kp_ds_all_sample/train2017/person_keypoints_dsall_train2017.json',
+    parser.add_argument('--save_path', type=str,      default='/home/al/dataset/double-light-fuse/mask-kp/20210512trainset/annos.json',
                         help='save coco json path')
 
-    parser.add_argument('--kp_names_file', type=str,  default='key_point_names.txt',
+    parser.add_argument('--kp_names_file', type=str,  default='/home/al/dataset/double-light-fuse/mask-kp/train_set/kp_names.txt',
                         help='key point names file')
 
-    parser.add_argument('--names_file', type=str,     default='label_names.txt',
+    parser.add_argument('--names_file', type=str,     default='/home/al/dataset/double-light-fuse/mask-kp/train_set/label_names.txt',
                         help='label names file')
 
-    parser.add_argument('--skeleton', type=str,   default='skeleton_17k.txt',
+    parser.add_argument('--skeleton', type=str,   default='/home/al/dataset/double-light-fuse/mask-kp/train_set/skeleton.txt',
                         help='skeleton file')
 
     args = parser.parse_args()

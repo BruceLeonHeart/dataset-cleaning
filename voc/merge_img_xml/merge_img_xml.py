@@ -14,9 +14,9 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--img_dir',type=str,default='/dataset/quexian/蒙东/mengdong_day4/jpgs')
-    parser.add_argument('--xml_dir',type=str,default='/dataset/quexian/蒙东/mengdong_day4/xmls')
-    parser.add_argument('--dest_dir',type=str,default='/dataset/quexian/蒙东/mengdong_day4/merge')
+    parser.add_argument('--img_dir',type=str,default='/home/al/dataset/double-light-fuse/0623/2021_6_fh/2/JPEGImages')
+    parser.add_argument('--xml_dir',type=str,default='/home/al/dataset/double-light-fuse/0623/2021_6_fh/2/Annotations')
+    parser.add_argument('--dest_dir',type=str,default='/home/al/dataset/double-light-fuse/0623/2021_6_fh/2/merge')
     opt = parser.parse_args()
     #三个参数均不可以为空
     if None == (opt.img_dir or opt.xml_dir or opt.dest_dir):
@@ -40,9 +40,9 @@ if __name__ == '__main__':
                 xml_src = os.path.join(opt.xml_dir,j)
                 jpg_dst = os.path.join(opt.dest_dir,i)
                 xml_dst = os.path.join(opt.dest_dir,j)
-                # shutil.move(jpg_src,jpg_dst)
-                # shutil.move(xml_src,xml_dst)
-                shutil.copy(jpg_src,jpg_dst)
-                shutil.copy(xml_src,xml_dst)   
+                shutil.move(jpg_src,jpg_dst)
+                shutil.move(xml_src,xml_dst)
+                # shutil.copy(jpg_src,jpg_dst)
+                # shutil.copy(xml_src,xml_dst)   
     print("you got {} couple data".format(N))
     print("Done")
